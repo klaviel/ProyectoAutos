@@ -12,7 +12,7 @@
 
 
 			$_SESSION['user_id']=$results['id'];
-			header("Location: /basedatosproyecto");
+			header("Location: /index.php");
 			# code...
 		}else{
 			$message='Sorry, Those credentials do not match';
