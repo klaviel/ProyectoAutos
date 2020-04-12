@@ -1,3 +1,3 @@
 	<header>
-		<a href="/basedatosproyecto">Inicio</a>
+		<a href="index.php">Inicio</a>
 	</header>
