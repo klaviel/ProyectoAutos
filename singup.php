@@ -25,6 +25,8 @@
 				$alert='<p class="msg_error">Error al crear el usuario.</p>';
 			}
 		}
+	}
+	
 
 
 

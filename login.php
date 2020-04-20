@@ -1,5 +1,4 @@
 <?php
-	<?php
 $alert = '';
 session_start();
 if(!empty($_SESSION['active']))
@@ -12,23 +11,19 @@ if(!empty($_SESSION['active']))
 	 	$alert='Ingrese su usuario y su clave';
 	}else{
 		require_once "conexion.php";
-		$user = $_POST['usuario'];
-		$pass = $_POST['clave'];
+		$email = $_POST['email'];
+		$pass = $_POST['password'];
 
-		$query = mysqli_query($connection, "SELECT * FROM usuario WHERE usuario = '$user' AND clave = '$pass'");
+		$query = mysqli_query($connection, "SELECT * FROM users WHERE email = '$email' AND password = '$pass'");
 		$result = mysqli_num_rows($query);
 		if($result>0)
 		{
 			$data = mysqli_fetch_array($query);
 			
 			$_SESSION['active'] = true;
-			$_SESSION['idUser'] = $data['idusuario'];
-			$_SESSION['nombre'] = $data['nombre'];
 			$_SESSION['email'] = $data['email'];
-			$_SESSION['user'] = $data['usuario'];
-			$_SESSION['rol'] = $data['rol'];
 
-			header('location: sistema/');
+			header('location: logout.php');
 
 		}else{
 			$alert ='El usuario o la clave son incorrectas';
