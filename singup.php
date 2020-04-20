@@ -4,10 +4,13 @@
 
 
 	$alert= '' ;
+	if(!empty($_POST)){
+		$alert='';
+		if(empty($_POST['email']) && empty ($_POST['password'])){
+			$alert='<p class="msg_error">Todoslos campos son obligatorios.</p>';
 
-
-	if(!empty($_POST['email']) && !empty ($_POST['password'])){
-
+		
+	}else{
 		include "database.php";
 		$email=$_POST['email'];
 		$password=$_POST['password'];
@@ -25,7 +28,13 @@
 				$alert='<p class="msg_error">Error al crear el usuario.</p>';
 			}
 		}
+
+
 	}
+}
+
+
+	
 
 
 
@@ -47,6 +56,9 @@
 	
 	<h1>SingUP</h1>
 	<spam>or <a href="login.php">Login</a> </spam>
+
+	<div class="alert"><?php echo isset($alert) ? $alert:''; ?> </div>
+	
 	
 	<form action="singup.php" method="post">
 		<input type="text" name="email" placeholder="Enter your email">
@@ -55,7 +67,7 @@
 
 		<input type="submit" value="Send">
 	</form>
-	<div class="alert"><?php echo issets($alert) ? $alert : ''; ?> </div>
+	
 	<spam>or <a href="singup.php">SingUp</a> </spam>
 
 </body>
