@@ -11,7 +11,7 @@
 		include "database.php";
 		$email=$_POST['email'];
 		$password=$_POST['password'];
-		$query=mysqli_query($conection,"SELECT * FROM users WHERE email = '$email");
+		$query=mysqli_query($conection,"SELECT * FROM users WHERE email = '$email'");
 		$result = mysqli_fetch_array($query);
 
 		if($result>0){
