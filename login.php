@@ -17,13 +17,14 @@ if(!empty($_SESSION['active']))
 		$query = mysqli_query($connection, "SELECT * FROM users WHERE email = '$email' AND password = '$pass'");
 		$result = mysqli_num_rows($query);
 		if($result>0)
-		{
+		{	
+
 			$data = mysqli_fetch_array($query);
 			
 			$_SESSION['active'] = true;
 			$_SESSION['email'] = $data['email'];
 
-			header('location: logout.php');
+			header('location: index.php');
 
 		}else{
 			$alert ='El usuario o la clave son incorrectas';

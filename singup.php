@@ -26,7 +26,7 @@
 			}
 		}
 	}
-	
+
 
 
 
@@ -44,9 +44,7 @@
 </head>
 <body>
 	<?php require 'partials/header.php'?>
-	<?php if(!empty($message)): ?>
-		<p><?= $message ?> </p>
-		<?php endif; ?>
+	
 	<h1>SingUP</h1>
 	<spam>or <a href="login.php">Login</a> </spam>
 	<div class="alert"><?php echo issets($alert) ? $alert : '';?></div>
