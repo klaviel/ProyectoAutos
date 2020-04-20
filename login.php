@@ -3,9 +3,9 @@ $alert = '';
 session_start();
 if(!empty($_SESSION['active']))
 {
-	header('location: sistema/');
+	header('location: index.php');
 }else{
-		if(empty($_POST['usuario'])|| empty($_POST['clave']))
+		if(empty($_POST['email'])|| empty($_POST['password']))
 	{
 
 	 	$alert='Ingrese su usuario y su clave';
@@ -51,9 +51,7 @@ if(!empty($_SESSION['active']))
 </head>
 <body>
 	<?php require 'partials/header.php'?>
-	<?php if(!empty($message)): ?>
-		<p><?= $message ?> </p>
-		<?php endif; ?>
+	
 	<h1>Login</h1>
 	<form action="login.php" method="post">
 		<input type="text" name="email" placeholder="Enter your email">
