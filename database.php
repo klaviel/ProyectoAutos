@@ -1,14 +1,14 @@
 <?php
-	$server ='babavzqi2mn2koodnnft-mysql.services.clever-cloud.com';
-	$username = 'us2nbfl0cnyjrwv4';
+	$host ='babavzqi2mn2koodnnft-mysql.services.clever-cloud.com';
+	$user = 'us2nbfl0cnyjrwv4';
 	$password = 'oiQfnubRRqrsGj8VYhNT';
-	$database ='babavzqi2mn2koodnnft';
+	$db ='babavzqi2mn2koodnnft';
 
-	try {
-		$conn = new PDO("mysql:host=$server; dbname=$database;", $username, $password);
-		
-	} catch (PDOException $e) {
-		die('Connected failed: '.$e->getMessage());
-		
+	$connection = @mysqli_connect($host,$user,$password,$db);
+	if(!$connection){
+		echo "ERROR EN LA CONEXION";
+
+	}else{
+		echo "Conexion exitosa";
 	}
 ?>
