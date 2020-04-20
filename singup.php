@@ -47,7 +47,7 @@
 	
 	<h1>SingUP</h1>
 	<spam>or <a href="login.php">Login</a> </spam>
-	<div class="alert"><?php echo issets($alert) ? $alert : '';?></div>
+	
 	<form action="singup.php" method="post">
 		<input type="text" name="email" placeholder="Enter your email">
 		<input type="password" name="password" placeholder="Enter your password">
@@ -55,6 +55,7 @@
 
 		<input type="submit" value="Send">
 	</form>
+	<div class="alert"><?php echo issets($alert) ? $alert : ''; ?> </div>
 	<spam>or <a href="singup.php">SingUp</a> </spam>
 
 </body>
