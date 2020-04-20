@@ -10,7 +10,7 @@ if(!empty($_SESSION['active']))
 
 	 	$alert='Ingrese su usuario y su clave';
 	}else{
-		require_once "conexion.php";
+		require_once "database.php";
 		$email = $_POST['email'];
 		$pass = $_POST['password'];
 
@@ -37,7 +37,7 @@ if(!empty($_SESSION['active']))
 
 		# code...
 	
- ?>
+?>
 
 
 <!DOCTYPE html>

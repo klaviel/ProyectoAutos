@@ -7,7 +7,7 @@
 	if(!empty($_POST)){
 		$alert='';
 		if(empty($_POST['email']) && empty ($_POST['password'])){
-			$alert='<p class="msg_error">Todoslos campos son obligatorios.</p>';
+			$alert='<p class="msg_error">Todos los campos son obligatorios.</p>';
 
 		
 	}else{
@@ -58,7 +58,7 @@
 	<spam>or <a href="login.php">Login</a> </spam>
 
 	<div class="alert"><?php echo isset($alert) ? $alert:''; ?> </div>
-	
+
 	
 	<form action="singup.php" method="post">
 		<input type="text" name="email" placeholder="Enter your email">
